@@ -1,0 +1,6 @@
+Silero Models v5_5_ru
+Copyright (c) Silero Team
+Source: https://github.com/snakers4/silero-models
+Model: https://models.silero.ai/models/tts/ru/v5_5_ru.pt
+License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+See SILERO-LICENSE.txt in this directory.

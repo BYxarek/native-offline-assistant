@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="OfflineAssistant.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:OfflineAssistant"
+      SizeChanged="Page_SizeChanged">
+    <Grid Background="Transparent" Padding="16">
+        <local:SphereVisual x:Name="SphereView" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            AutomationProperties.Name="Анимированная сфера. Нажмите, чтобы открыть чат" Tapped="Sphere_Tapped" />
+    </Grid>
+</Page>

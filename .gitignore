@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+**/.vs/
+installer/output/
+installer/tts-build/
+installer/compact-probe/
+installer/singlefile-*/
+*.log

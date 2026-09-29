@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="OfflineAssistant.ChatPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid x:Name="ChatRoot" Background="Transparent" Padding="40,32,40,28" SizeChanged="ChatRoot_SizeChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Spacing="5">
+                <TextBlock Text="Чат" FontSize="31" FontWeight="SemiBold" />
+                <TextBlock Text="Ваш голос появляется здесь в реальном времени" FontSize="13" Opacity="0.65" />
+            </StackPanel>
+            <Border x:Name="LanguageBadge" Grid.Column="1" Style="{StaticResource GlassCardStyle}" Padding="12,7" VerticalAlignment="Center">
+                <TextBlock Text="RU  ·  OFFLINE" FontSize="11" CharacterSpacing="100" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            </Border>
+        </Grid>
+        <ScrollViewer x:Name="TranscriptScroll" Grid.Row="1" Margin="0,30,0,22" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="Transcript" Spacing="16">
+                <Border Style="{StaticResource GlassCardStyle}" Padding="18,15" HorizontalAlignment="Left" MaxWidth="500">
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="СФЕРА" FontSize="11" CharacterSpacing="120" Foreground="{ThemeResource AccentFillColorDefaultBrush}" />
+                        <TextBlock x:Name="WelcomeText" TextWrapping="Wrap" FontSize="14" />
+                    </StackPanel>
+                </Border>
+                <Border x:Name="PartialBubble" Style="{StaticResource GlassCardStyle}" Padding="18,14" HorizontalAlignment="Right" MaxWidth="510" Visibility="Collapsed">
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="СЕЙЧАС" FontSize="10" CharacterSpacing="120" Opacity="0.75" />
+                        <TextBlock x:Name="PartialText" TextWrapping="Wrap" FontSize="15" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+        <Border Grid.Row="2" Style="{StaticResource GlassCardStyle}" Padding="17,14">
+            <Grid x:Name="Composer">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel VerticalAlignment="Center" Spacing="4">
+                    <TextBlock x:Name="StatusText" Text="Микрофон выключен" FontSize="14" FontWeight="SemiBold" />
+                    <TextBlock x:Name="InstructionText" FontSize="11" Opacity="0.62" TextWrapping="Wrap" />
+                </StackPanel>
+                <Button x:Name="MicButton" Grid.Column="1" Content="●  Начать запись" Click="MicButton_Click" Padding="18,12" Style="{StaticResource AccentButtonStyle}" AutomationProperties.Name="Начать запись с микрофона" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

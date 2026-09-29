@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="OfflineAssistant.PhrasesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Loaded="Page_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Padding="24,24,24,36" Spacing="18" MaxWidth="760" HorizontalAlignment="Left">
+            <TextBlock Text="Фразы" FontSize="30" FontWeight="SemiBold" />
+            <TextBlock Text="Озвучьте текст голосом Silero. Готовые записи сохранятся для повторного прослушивания." TextWrapping="Wrap" Opacity="0.68" />
+            <TextBox x:Name="PhraseBox" Header="Новая фраза" PlaceholderText="Введите текст для озвучивания" TextWrapping="Wrap" AcceptsReturn="True" MaxLength="500" Height="100" />
+            <ComboBox x:Name="SpeakerBox" Header="Голос" SelectedIndex="0" Width="230" HorizontalAlignment="Left">
+                <x:String>xenia</x:String>
+                <x:String>kseniya</x:String>
+                <x:String>baya</x:String>
+                <x:String>aidar</x:String>
+                <x:String>eugene</x:String>
+            </ComboBox>
+            <Button x:Name="SynthesizeButton" Content="Озвучить и сохранить" Click="SynthesizeButton_Click" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Left" />
+            <TextBlock x:Name="PhraseStatus" TextWrapping="Wrap" AutomationProperties.LiveSetting="Polite" />
+            <StackPanel x:Name="PhraseList" Spacing="12" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

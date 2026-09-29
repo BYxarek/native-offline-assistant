@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OfflineAssistant (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "OfflineAssistant (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
